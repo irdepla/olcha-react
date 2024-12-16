@@ -7,7 +7,7 @@ const ProductDetails = () => {
   const [product, setProduct] = useState({});
   async function getProduct() {
     try {
-      const res = await axios.get("/products/" + id);
+      const res = await axios.get("http://localhost:5000/products/" + id);
       setProduct(res.data.data);
       console.log(res.data.data);
     } catch (error) {
@@ -23,9 +23,7 @@ const ProductDetails = () => {
   return(
   <>
    <div>
-    {
-      
-    }
+    <h2>{product.name}</h2>
    </div>
   </>
   )
